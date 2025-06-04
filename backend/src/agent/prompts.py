@@ -17,7 +17,7 @@ Instructions:
 - Query should ensure that the most current information is gathered. The current date is {current_date}.
 
 Format: 
-- Format your response as a JSON object with ALL three of these exact keys:
+- Format your response as a JSON object with these exact keys:
    - "rationale": Brief explanation of why these queries are relevant
    - "query": A list of search queries
 
@@ -25,10 +25,10 @@ Example:
 
 Topic: What revenue grew more last year apple stock or the number of people buying an iphone
 ```json
-{{
+{
     "rationale": "To answer this comparative growth question accurately, we need specific data points on Apple's stock performance and iPhone sales metrics. These queries target the precise financial information needed: company revenue trends, product-specific unit sales figures, and stock price movement over the same fiscal period for direct comparison.",
-    "query": ["Apple total revenue growth fiscal year 2024", "iPhone unit sales growth fiscal year 2024", "Apple stock price growth fiscal year 2024"],
-}}
+    "query": ["Apple total revenue growth fiscal year 2024", "iPhone unit sales growth fiscal year 2024", "Apple stock price growth fiscal year 2024"]
+}
 ```
 
 Context: {research_topic}"""
@@ -66,11 +66,11 @@ Output Format:
 
 Example:
 ```json
-{{
+{
     "is_sufficient": true, // or false
     "knowledge_gap": "The summary lacks information about performance metrics and benchmarks", // "" if is_sufficient is true
     "follow_up_queries": ["What are typical performance benchmarks and metrics used to evaluate [specific technology]?"] // [] if is_sufficient is true
-}}
+}
 ```
 
 Reflect carefully on the Summaries to identify knowledge gaps and produce a follow-up query. Then, produce your output following this JSON format:
